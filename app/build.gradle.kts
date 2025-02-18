@@ -4,8 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.pushnotification"
-    compileSdk = 34
-
+    compileSdk = 35
     defaultConfig {
         applicationId = "com.example.pushnotification"
         minSdk = 24

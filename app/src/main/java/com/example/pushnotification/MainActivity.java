@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import com.example.pushnotification.databinding.ActivityMainBinding;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round);
 
         // Tạo một thông báo bằng Notification.Builder
-        Notification notification = new Notification.Builder(this)
+        Notification notification = new NotificationCompat.Builder(this,MyApplication.CHANNEL_ID)
                 .setContentTitle("Title Push Notification") // Tiêu đề thông báo
                 .setContentText("Text Push Notification") // Nội dung thông báo
                 .setSmallIcon(R.mipmap.ic_launcher_round) // Icon nhỏ hiển thị trên thanh thông báo
