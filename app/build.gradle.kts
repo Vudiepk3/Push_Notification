@@ -4,8 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.pushnotification"
-    compileSdk = 34
-
+    compileSdk = 35
     defaultConfig {
         applicationId = "com.example.pushnotification"
         minSdk = 24
@@ -28,6 +27,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
