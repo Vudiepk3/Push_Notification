@@ -39,7 +39,7 @@ public class MyApplication extends Application {
             Uri sound_notification = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.sound_notification);
             CharSequence name_2 = getString(R.string.channel_name_2);
             String description_2 = getString(R.string.channel_description);
-            int importance_2 = NotificationManager.IMPORTANCE_DEFAULT;
+            int importance_2 = NotificationManager.IMPORTANCE_HIGH;// Cài đặt độ ưu tiên cho thông báo
             NotificationChannel channel_2 = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
             channel.setSound(sound_notification, audioAttributes);

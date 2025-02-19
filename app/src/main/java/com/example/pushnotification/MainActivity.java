@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             senNotification2(); // Gọi phương thức gửi thông báo khi nhấn button
         });
     }
-
     // Phương thức tạo và hiển thị thông báo
     private void senNotification() {
         // Tạo một Bitmap từ tài nguyên drawable để làm icon lớn trong thông báo
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(CONTENT))
                 .setLargeIcon(bitmap) // Icon lớn hiển thị khi mở rộng thông báo
                 .setSound(uri) // Cài đặt âm thanh cho thông báo
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)// Cài đặt độ ưu tiên cho thông báo
                 .build(); // Xây dựng đối tượng thông báo
 
         // Lấy dịch vụ NotificationManager để quản lý thông báo
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 .setLargeIcon(bitmap) // Icon lớn hiển thị khi mở rộng thông báo
                 .setSound(sound_notification) // Cài đặt âm thanh cho thông báo
                 .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap).bigLargeIcon((Bitmap) null))
+                .setPriority(NotificationCompat.PRIORITY_HIGH)// Cài đặt độ ưu tiên cho thông báo
                 .build(); // Xây dựng đối tượng thông báo
 
         // Lấy dịch vụ NotificationManager để quản lý thông báo
