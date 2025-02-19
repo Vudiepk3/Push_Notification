@@ -13,19 +13,20 @@ import androidx.core.app.NotificationCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Khai báo biến để sử dụng View Binding
-    private ActivityMainBinding binding;
+    private final String CONTENT ="Text Push Notification.Text Push Notification.Text Push Notification.Text Push Notification.Text Push Notification.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Sử dụng View Binding để gán layout cho Activity
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Gán sự kiện click cho button
         binding.btnNotification.setOnClickListener(v -> {
             senNotification(); // Gọi phương thức gửi thông báo khi nhấn button
+        });
+        binding.btnNotification2.setOnClickListener(v -> {
+            senNotification2(); // Gọi phương thức gửi thông báo khi nhấn button
         });
     }
 
@@ -37,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
         // Tạo một thông báo bằng Notification.Builder
         Notification notification = new NotificationCompat.Builder(this,MyApplication.CHANNEL_ID)
                 .setContentTitle("Title Push Notification") // Tiêu đề thông báo
-                .setContentText("Text Push Notification") // Nội dung thông báo
+                .setContentText(CONTENT) // Nội dung thông báo
                 .setSmallIcon(R.mipmap.ic_launcher_round) // Icon nhỏ hiển thị trên thanh thông báo
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(CONTENT))
                 .setLargeIcon(bitmap) // Icon lớn hiển thị khi mở rộng thông báo
                 .build(); // Xây dựng đối tượng thông báo
 
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void senNotification2() {
         // Tạo một Bitmap từ tài nguyên drawable để làm icon lớn trong thông báo
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.img_notification);
 
         // Tạo một thông báo bằng Notification.Builder
         Notification notification = new NotificationCompat.Builder(this,MyApplication.CHANNEL_ID_2)
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Text Push Notification_2") // Nội dung thông báo
                 .setSmallIcon(R.mipmap.ic_launcher_round) // Icon nhỏ hiển thị trên thanh thông báo
                 .setLargeIcon(bitmap) // Icon lớn hiển thị khi mở rộng thông báo
+                .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap).bigLargeIcon((Bitmap) null))
                 .build(); // Xây dựng đối tượng thông báo
 
         // Lấy dịch vụ NotificationManager để quản lý thông báo
