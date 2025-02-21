@@ -139,4 +139,4 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TAG", "onResume: "+ this.hashCode());
     }
 }
-//https://developer.android.com/develop/ui/views/notifications/custom-notification?authuser=1&hl=vi
+//Document :https://developer.android.com/develop/ui/views/notifications/navigation?hl=vi
