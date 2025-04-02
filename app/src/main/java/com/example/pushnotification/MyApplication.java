@@ -38,10 +38,10 @@ public class MyApplication extends Application {
             //Config channel 2
             Uri sound_notification = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.sound_notification);
             CharSequence name_2 = getString(R.string.channel_name_2);
-            String description_2 = getString(R.string.channel_description);
+            String description_2 = getString(R.string.channel_description_2);
             int importance_2 = NotificationManager.IMPORTANCE_HIGH;// Cài đặt độ ưu tiên cho thông báo
-            NotificationChannel channel_2 = new NotificationChannel(CHANNEL_ID, name, importance);
-            channel.setDescription(description);
+            NotificationChannel channel_2 = new NotificationChannel(CHANNEL_ID_2, name_2, importance_2);
+            channel.setDescription(description_2);
             channel.setSound(sound_notification, audioAttributes);
 
             // Register the channel with the system. You can't change the importance
